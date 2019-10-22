@@ -1,0 +1,90 @@
+======================================================
+Filename: script1.txt
+Running Test: ClassA
+Recursive: true
+
+Name of Class: ClassA
+Name of Immediate superclass: java.lang.Object
+[Ljava.lang.reflect.Method;@33909752
+
+Constructor Name: ClassA
+Parameter(s): 
+Constructor Modifier: public
+
+Constructor Name: ClassA
+Parameter(s): int
+Constructor Modifier: public
+
+Method Name: run
+Parameter(s): 
+Method Return Type: void
+Method Modifier: public
+
+Method Name: toString
+Parameter(s): 
+Method Return Type: class java.lang.String
+Method Modifier: public
+
+Method Name: setVal
+Parameter(s): int
+Method Return Type: void
+Method Modifier: public
+
+Method Name: getVal
+Parameter(s): 
+Method Return Type: int
+Method Modifier: public
+
+Method Name: wait
+Parameter(s): long, int
+Method Return Type: void
+Method Modifier: public final
+
+Method Name: wait
+Parameter(s): long
+Method Return Type: void
+Method Modifier: public final native
+
+Method Name: wait
+Parameter(s): 
+Method Return Type: void
+Method Modifier: public final
+
+Method Name: equals
+Parameter(s): java.lang.Object
+Method Return Type: boolean
+Method Modifier: public
+
+Method Name: hashCode
+Parameter(s): 
+Method Return Type: int
+Method Modifier: public native
+
+Method Name: getClass
+Parameter(s): 
+Method Return Type: class java.lang.Class
+Method Modifier: public final native
+
+Method Name: notify
+Parameter(s): 
+Method Return Type: void
+Method Modifier: public final native
+
+Method Name: notifyAll
+Parameter(s): 
+Method Return Type: void
+Method Modifier: public final native
+
+Field Name: val
+Field Type: int
+Field Modifier: private
+
+Field Name: val2
+Field Type: double
+Field Modifier: private
+
+Field Name: val3
+Field Type: boolean
+Field Modifier: private
+
+======================================================

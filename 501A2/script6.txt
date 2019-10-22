@@ -1,0 +1,55 @@
+======================================================
+Filename: script6.txt
+Running Test: [LClassB;@1b6d3586
+Recursive: true
+
+Name of Class: [LClassB;
+Name of Immediate superclass: java.lang.Object
+[Ljava.lang.reflect.Method;@1540e19d
+
+Method Name: wait
+Parameter(s): long, int
+Method Return Type: void
+Method Modifier: public final
+
+Method Name: wait
+Parameter(s): long
+Method Return Type: void
+Method Modifier: public final native
+
+Method Name: wait
+Parameter(s): 
+Method Return Type: void
+Method Modifier: public final
+
+Method Name: equals
+Parameter(s): java.lang.Object
+Method Return Type: boolean
+Method Modifier: public
+
+Method Name: toString
+Parameter(s): 
+Method Return Type: class java.lang.String
+Method Modifier: public
+
+Method Name: hashCode
+Parameter(s): 
+Method Return Type: int
+Method Modifier: public native
+
+Method Name: getClass
+Parameter(s): 
+Method Return Type: class java.lang.Class
+Method Modifier: public final native
+
+Method Name: notify
+Parameter(s): 
+Method Return Type: void
+Method Modifier: public final native
+
+Method Name: notifyAll
+Parameter(s): 
+Method Return Type: void
+Method Modifier: public final native
+
+======================================================

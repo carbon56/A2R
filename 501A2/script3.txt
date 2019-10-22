@@ -1,0 +1,101 @@
+======================================================
+Filename: script3.txt
+Running Test: ClassB
+Recursive: true
+
+Name of Class: ClassB
+Name of Immediate superclass: ClassC
+[Ljava.lang.reflect.Method;@4aa298b7
+
+Constructor Name: ClassB
+Parameter(s): 
+Constructor Modifier: public
+
+Method Name: run
+Parameter(s): 
+Method Return Type: void
+Method Modifier: public
+
+Method Name: toString
+Parameter(s): 
+Method Return Type: class java.lang.String
+Method Modifier: public
+
+Method Name: func3
+Parameter(s): int
+Method Return Type: void
+Method Modifier: public
+
+Method Name: func0
+Parameter(s): int, boolean
+Method Return Type: void
+Method Modifier: public
+
+Method Name: func1
+Parameter(s): int, double, boolean, java.lang.String
+Method Return Type: void
+Method Modifier: public
+
+Method Name: func2
+Parameter(s): java.lang.String
+Method Return Type: int
+Method Modifier: public
+
+Method Name: getVal3
+Parameter(s): 
+Method Return Type: int
+Method Modifier: public
+
+Method Name: wait
+Parameter(s): long, int
+Method Return Type: void
+Method Modifier: public final
+
+Method Name: wait
+Parameter(s): long
+Method Return Type: void
+Method Modifier: public final native
+
+Method Name: wait
+Parameter(s): 
+Method Return Type: void
+Method Modifier: public final
+
+Method Name: equals
+Parameter(s): java.lang.Object
+Method Return Type: boolean
+Method Modifier: public
+
+Method Name: hashCode
+Parameter(s): 
+Method Return Type: int
+Method Modifier: public native
+
+Method Name: getClass
+Parameter(s): 
+Method Return Type: class java.lang.Class
+Method Modifier: public final native
+
+Method Name: notify
+Parameter(s): 
+Method Return Type: void
+Method Modifier: public final native
+
+Method Name: notifyAll
+Parameter(s): 
+Method Return Type: void
+Method Modifier: public final native
+
+Field Name: val
+Field Type: ClassA
+Field Modifier: private
+
+Field Name: val2
+Field Type: ClassA
+Field Modifier: private
+
+Field Name: val3
+Field Type: ClassA
+Field Modifier: private
+
+======================================================
