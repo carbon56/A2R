@@ -1,11 +1,14 @@
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+// Remember to do some refactorings 
+// CPSC 501 Assignment 2
 
 public class Inspector {
-
+	// just use a while loop thats like while  != object class, print stuff then move down etc. 
     public void inspect(Object obj, boolean recursive) {
         Class c = obj.getClass();
         inspectClass(c, obj, recursive, 0);
@@ -17,14 +20,17 @@ public class Inspector {
     	System.out.println("Name of Class: " + c.getName());
     	
     	// (2) Get name of the immediate superclass 
-    	System.out.println("Name of Immediate superclass: " + c.getSuperclass().getName());
-    	System.out.println(c.getMethods());
+    	System.out.println("Name of Immediate superclass: " + c.getSuperclass().getName() + "\n");
+    	// System.out.println(c.getMethods());
     	
     	
     	// Constructors that the class declares 
-    	
     	// (3) Examine the interfaces 
     	Class[] interfaces = c.getInterfaces();
+    	
+    	for(Class inter : interfaces ) {
+    		System.out.println("Interface Name: " + inter.getName());
+    	}
     	System.out.println();
     	// (4) Inspect Constructors 
 //    	a) The name constructors the class declares. For each, also find the following:
@@ -73,8 +79,13 @@ public class Inspector {
     		// (a) get name of the method 
     		System.out.println("Method Name: " + method.getName());
     		// (b) get the exceptions thrown
+    		   
+    		Class[] classExceptions = method.getExceptionTypes();
+    		for(Class except : classExceptions) {
+    			System.out.println("Exception Types: " + except.getName());
+    		}
     		
-    		// Class[] classExceptions = c.
+    		//System.out.println();
     		
     		// (c) get the parameter types of method 
     		Class[] parameterTypes = method.getParameterTypes();
@@ -107,21 +118,104 @@ public class Inspector {
 //		i) If the field is an object reference, and recursive is set to false, then simply print out the “reference value
 //		
 		Field[] Classfields = c.getDeclaredFields();
-		
-		for(Field field : Classfields) {
-			System.out.println("Field Name: " + field.getName());
-			System.out.println("Field Type: " + field.getType().getName());
-			// double check if toString is allowed / read documentation 
-			System.out.println("Field Modifier: " + Modifier.toString(field.getModifiers()) + "\n");
-			
-			
-			
-			// How to get the values 
-			// System.out.println(field.get);
-			
+			for(int k = 0; k < Classfields.length; k++) {
+				Classfields[k].setAccessible(true);
+				System.out.println("Field Name: " + Classfields[k].getName());
+				System.out.println("Field Type: " + Classfields[k].getType().getName());
+				// double check if toString is allowed / read documentation 
+				System.out.println("Field Modifier: " + Modifier.toString(Classfields[k].getModifiers()));
+				
+				try {
+					// Need to get arrays and also other objects :< 
+					Object value = Classfields[k].get(obj);
+					if(checkPrimitiveValue(value)) {
+						System.out.println("Field Value: " + value + "\n");
+						
+					}
+					else {
+						if(Classfields[k].getType().isArray()) {
+							String wow = "[";
+
+								for(int w = 0; w < Array.getLength(value);w++) {
+									Object thing = Array.get(value, w);
+									if(checkPrimitiveValue(thing)) {
+										//System.out.println("Field Value: " + value + "\n");
+										wow += " " + thing + ","; 
+										
+										
+									}
+									
+									
+									
+									
+									
+								}
+								wow += " ]";
+								System.out.println(wow);
+								
+								
+							
+							
+							
+							
+							
+						
+						
+						//System.out.println("NO");
+					}
+					}
+					
+					//System.out.println("Class is" + value.getClass());
+//					String wow = "[";
+//					if (value.getClass() != null) {
+//					if(value.getClass().isArray()) {
+//						
+//						for(int w = 0; w < Array.getLength(value);w++) {
+//							Object thing = Array.get(value, w);
+//							if(checkPrimitiveValue(thing)) {
+//								//System.out.println("Field Value: " + value + "\n");
+//								wow += " " + thing + ","; 
+//								
+//								
+//							}
+//							
+//							
+//							
+//							
+//							
+//						}
+//						wow += " ]";
+//						System.out.println(wow);
+//						
+//						
+//					}
+//					}
+//					if(value != null) {
+//						if(value.getClass().isPrimitive() || value.getClass() == java.lang.Long.class
+//								|| value.getClass() == java.lang.String.class || value.getClass() == java.lang.Integer.class ||
+//								value.getClass() == java.lang.Boolean.class || value.getClass() == java.lang.Double.class ||
+//								value.getClass() == java.lang.Character.class || value.getClass() == java.lang.Byte.class || 
+//								value.getClass() == java.lang.Short.class || value.getClass() == java.lang.Float.class) {
+//							System.out.println("Field Value: " + value + "\n");
+//							
+//						}
+//						else {
+//							System.out.println("Not primitive type \n");
+//						}
+//					}
+				} catch (IllegalArgumentException | IllegalAccessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+					
+//				
+//			}
 			//  The recursive stuff 
 			
 		}
+		
+		
     	
     	
     	
@@ -131,5 +225,28 @@ public class Inspector {
     	
     	
     }
-
+    
+    public boolean checkPrimitiveValue(Object value) {
+		if(value != null) {
+			if(value.getClass().isPrimitive() || value.getClass() == java.lang.Long.class
+					|| value.getClass() == java.lang.String.class || value.getClass() == java.lang.Integer.class ||
+					value.getClass() == java.lang.Boolean.class || value.getClass() == java.lang.Double.class ||
+					value.getClass() == java.lang.Character.class || value.getClass() == java.lang.Byte.class || 
+					value.getClass() == java.lang.Short.class || value.getClass() == java.lang.Float.class) {
+				// System.out.println("Field Value: " + value + "\n");
+				return true;
+				
+			}
+			
+			else {
+				System.out.println("Not primitive type \n");
+				return false; 
+			}
+    	
+    }
+		return false;
+    }
+    
 }
+
+

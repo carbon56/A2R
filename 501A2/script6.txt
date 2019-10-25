@@ -1,23 +1,28 @@
 ======================================================
 Filename: script6.txt
-Running Test: [LClassB;@1b6d3586
+Running Test: [LClassB;@232204a1
 Recursive: true
 
 Name of Class: [LClassB;
 Name of Immediate superclass: java.lang.Object
-[Ljava.lang.reflect.Method;@1540e19d
+
+Interface Name: java.lang.Cloneable
+Interface Name: java.io.Serializable
 
 Method Name: wait
+Exception Types: java.lang.InterruptedException
 Parameter(s): long, int
 Method Return Type: void
 Method Modifier: public final
 
 Method Name: wait
+Exception Types: java.lang.InterruptedException
 Parameter(s): long
 Method Return Type: void
 Method Modifier: public final native
 
 Method Name: wait
+Exception Types: java.lang.InterruptedException
 Parameter(s): 
 Method Return Type: void
 Method Modifier: public final

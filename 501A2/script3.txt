@@ -5,7 +5,8 @@ Recursive: true
 
 Name of Class: ClassB
 Name of Immediate superclass: ClassC
-[Ljava.lang.reflect.Method;@4aa298b7
+
+Interface Name: java.lang.Runnable
 
 Constructor Name: ClassB
 Parameter(s): 
@@ -26,19 +27,24 @@ Parameter(s): int
 Method Return Type: void
 Method Modifier: public
 
-Method Name: func0
-Parameter(s): int, boolean
-Method Return Type: void
-Method Modifier: public
-
 Method Name: func1
+Exception Types: java.lang.Exception
 Parameter(s): int, double, boolean, java.lang.String
 Method Return Type: void
 Method Modifier: public
 
 Method Name: func2
+Exception Types: java.lang.Exception
+Exception Types: java.lang.ArithmeticException
+Exception Types: java.lang.IllegalMonitorStateException
 Parameter(s): java.lang.String
 Method Return Type: int
+Method Modifier: public
+
+Method Name: func0
+Exception Types: java.lang.Exception
+Parameter(s): int, boolean
+Method Return Type: void
 Method Modifier: public
 
 Method Name: getVal3
@@ -47,16 +53,19 @@ Method Return Type: int
 Method Modifier: public
 
 Method Name: wait
+Exception Types: java.lang.InterruptedException
 Parameter(s): long, int
 Method Return Type: void
 Method Modifier: public final
 
 Method Name: wait
+Exception Types: java.lang.InterruptedException
 Parameter(s): long
 Method Return Type: void
 Method Modifier: public final native
 
 Method Name: wait
+Exception Types: java.lang.InterruptedException
 Parameter(s): 
 Method Return Type: void
 Method Modifier: public final
@@ -89,13 +98,14 @@ Method Modifier: public final native
 Field Name: val
 Field Type: ClassA
 Field Modifier: private
+Not primitive type 
 
 Field Name: val2
 Field Type: ClassA
 Field Modifier: private
+Not primitive type 
 
 Field Name: val3
 Field Type: ClassA
 Field Modifier: private
-
 ======================================================

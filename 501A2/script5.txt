@@ -5,7 +5,7 @@ Recursive: true
 
 Name of Class: ClassD
 Name of Immediate superclass: java.lang.Object
-[Ljava.lang.reflect.Method;@28d93b30
+
 
 Constructor Name: ClassD
 Parameter(s): 
@@ -26,16 +26,19 @@ Method Return Type: int
 Method Modifier: public
 
 Method Name: wait
+Exception Types: java.lang.InterruptedException
 Parameter(s): long, int
 Method Return Type: void
 Method Modifier: public final
 
 Method Name: wait
+Exception Types: java.lang.InterruptedException
 Parameter(s): long
 Method Return Type: void
 Method Modifier: public final native
 
 Method Name: wait
+Exception Types: java.lang.InterruptedException
 Parameter(s): 
 Method Return Type: void
 Method Modifier: public final
@@ -68,17 +71,26 @@ Method Modifier: public final native
 Field Name: val
 Field Type: ClassA
 Field Modifier: private
+Not primitive type 
 
 Field Name: val2
 Field Type: ClassA
 Field Modifier: private static
-
 Field Name: val3
 Field Type: int
 Field Modifier: private
+Field Value: 34
 
 Field Name: vallarray
 Field Type: [LClassA;
 Field Modifier: private
+Not primitive type 
 
+[ ]
+Field Name: delete
+Field Type: [Ljava.lang.Integer;
+Field Modifier: private
+Not primitive type 
+
+[ 1, 2, 4, ]
 ======================================================
