@@ -4,8 +4,7 @@ Running Test: ClassB
 Recursive: true
 
 Name of Class: ClassB
-Name of Immediate superclass: ClassC
-
+Name of ClassClassB
 Interface Name: java.lang.Runnable
 
 Constructor Name: ClassB
@@ -27,12 +26,10 @@ Parameter(s): int
 Method Return Type: void
 Method Modifier: public
 
-Method Name: func2
+Method Name: func0
 Exception Types: java.lang.Exception
-Exception Types: java.lang.ArithmeticException
-Exception Types: java.lang.IllegalMonitorStateException
-Parameter(s): java.lang.String
-Method Return Type: int
+Parameter(s): int, boolean
+Method Return Type: void
 Method Modifier: public
 
 Method Name: func1
@@ -41,10 +38,12 @@ Parameter(s): int, double, boolean, java.lang.String
 Method Return Type: void
 Method Modifier: public
 
-Method Name: func0
+Method Name: func2
 Exception Types: java.lang.Exception
-Parameter(s): int, boolean
-Method Return Type: void
+Exception Types: java.lang.ArithmeticException
+Exception Types: java.lang.IllegalMonitorStateException
+Parameter(s): java.lang.String
+Method Return Type: int
 Method Modifier: public
 
 Method Name: getVal3
@@ -108,4 +107,262 @@ Not primitive type
 Field Name: val3
 Field Type: ClassA
 Field Modifier: private
+======================================================
+	Inspecting Superclass: ClassC
+	
+	Name of Class: ClassC
+	Name of ClassClassC
+	Interface Name: InterfaceA
+	
+	Constructor Name: ClassC
+	Parameter(s): 
+	Constructor Modifier: public
+
+	Constructor Name: ClassC
+	Parameter(s): int, int
+	Constructor Modifier: public
+
+	Method Name: run
+	Parameter(s): 
+	Method Return Type: void
+	Method Modifier: public
+	
+	Method Name: toString
+	Parameter(s): 
+	Method Return Type: class java.lang.String
+	Method Modifier: public
+	
+	Method Name: func3
+	Parameter(s): int
+	Method Return Type: void
+	Method Modifier: public abstract
+	
+	Method Name: func0
+	Exception Types: java.lang.Exception
+	Parameter(s): int, boolean
+	Method Return Type: void
+	Method Modifier: public
+	
+	Method Name: func1
+	Exception Types: java.lang.Exception
+	Parameter(s): int, double, boolean, java.lang.String
+	Method Return Type: void
+	Method Modifier: public
+	
+	Method Name: func2
+	Exception Types: java.lang.Exception
+	Exception Types: java.lang.ArithmeticException
+	Exception Types: java.lang.IllegalMonitorStateException
+	Parameter(s): java.lang.String
+	Method Return Type: int
+	Method Modifier: public
+	
+	Method Name: getVal3
+	Parameter(s): 
+	Method Return Type: int
+	Method Modifier: public
+	
+	Method Name: wait
+	Exception Types: java.lang.InterruptedException
+	Parameter(s): long, int
+	Method Return Type: void
+	Method Modifier: public final
+	
+	Method Name: wait
+	Exception Types: java.lang.InterruptedException
+	Parameter(s): long
+	Method Return Type: void
+	Method Modifier: public final native
+	
+	Method Name: wait
+	Exception Types: java.lang.InterruptedException
+	Parameter(s): 
+	Method Return Type: void
+	Method Modifier: public final
+	
+	Method Name: equals
+	Parameter(s): java.lang.Object
+	Method Return Type: boolean
+	Method Modifier: public
+	
+	Method Name: hashCode
+	Parameter(s): 
+	Method Return Type: int
+	Method Modifier: public native
+	
+	Method Name: getClass
+	Parameter(s): 
+	Method Return Type: class java.lang.Class
+	Method Modifier: public final native
+	
+	Method Name: notify
+	Parameter(s): 
+	Method Return Type: void
+	Method Modifier: public final native
+	
+	Method Name: notifyAll
+	Parameter(s): 
+	Method Return Type: void
+	Method Modifier: public final native
+	
+	Field Name: val2
+	Field Type: ClassA
+	Field Modifier: private
+Not primitive type 
+
+	Field Name: val3
+	Field Type: ClassA
+	Field Modifier: private
+Not primitive type 
+
+	Field Name: val4
+	Field Type: ClassA
+	Field Modifier: private
+Not primitive type 
+
+======================================================
+		Inspecting Superclass: ClassD
+		
+		Name of Class: ClassD
+		Name of ClassClassD
+		
+		Constructor Name: ClassD
+		Parameter(s): 
+		Constructor Modifier: public
+
+		Constructor Name: ClassD
+		Parameter(s): int
+		Constructor Modifier: public
+
+		Method Name: toString
+		Parameter(s): 
+		Method Return Type: class java.lang.String
+		Method Modifier: public
+		
+		Method Name: getVal3
+		Parameter(s): 
+		Method Return Type: int
+		Method Modifier: public
+		
+		Method Name: wait
+		Exception Types: java.lang.InterruptedException
+		Parameter(s): long, int
+		Method Return Type: void
+		Method Modifier: public final
+		
+		Method Name: wait
+		Exception Types: java.lang.InterruptedException
+		Parameter(s): long
+		Method Return Type: void
+		Method Modifier: public final native
+		
+		Method Name: wait
+		Exception Types: java.lang.InterruptedException
+		Parameter(s): 
+		Method Return Type: void
+		Method Modifier: public final
+		
+		Method Name: equals
+		Parameter(s): java.lang.Object
+		Method Return Type: boolean
+		Method Modifier: public
+		
+		Method Name: hashCode
+		Parameter(s): 
+		Method Return Type: int
+		Method Modifier: public native
+		
+		Method Name: getClass
+		Parameter(s): 
+		Method Return Type: class java.lang.Class
+		Method Modifier: public final native
+		
+		Method Name: notify
+		Parameter(s): 
+		Method Return Type: void
+		Method Modifier: public final native
+		
+		Method Name: notifyAll
+		Parameter(s): 
+		Method Return Type: void
+		Method Modifier: public final native
+		
+		Field Name: val
+		Field Type: ClassA
+		Field Modifier: private
+Not primitive type 
+
+		Field Name: val2
+		Field Type: ClassA
+		Field Modifier: private static
+		Field Name: val3
+		Field Type: int
+		Field Modifier: private
+		Field Value: 34
+
+		Field Name: vallarray
+		Field Type: [LClassA;
+		Field Modifier: private
+Not primitive type 
+
+		[ ]
+======================================================
+			Inspecting Superclass: java.lang.Object
+			
+			Name of Class: java.lang.Object
+			Name of Classjava.lang.Object
+			
+			Constructor Name: java.lang.Object
+			Parameter(s): 
+			Constructor Modifier: public
+
+			Method Name: wait
+			Exception Types: java.lang.InterruptedException
+			Parameter(s): long, int
+			Method Return Type: void
+			Method Modifier: public final
+			
+			Method Name: wait
+			Exception Types: java.lang.InterruptedException
+			Parameter(s): long
+			Method Return Type: void
+			Method Modifier: public final native
+			
+			Method Name: wait
+			Exception Types: java.lang.InterruptedException
+			Parameter(s): 
+			Method Return Type: void
+			Method Modifier: public final
+			
+			Method Name: equals
+			Parameter(s): java.lang.Object
+			Method Return Type: boolean
+			Method Modifier: public
+			
+			Method Name: toString
+			Parameter(s): 
+			Method Return Type: class java.lang.String
+			Method Modifier: public
+			
+			Method Name: hashCode
+			Parameter(s): 
+			Method Return Type: int
+			Method Modifier: public native
+			
+			Method Name: getClass
+			Parameter(s): 
+			Method Return Type: class java.lang.Class
+			Method Modifier: public final native
+			
+			Method Name: notify
+			Parameter(s): 
+			Method Return Type: void
+			Method Modifier: public final native
+			
+			Method Name: notifyAll
+			Parameter(s): 
+			Method Return Type: void
+			Method Modifier: public final native
+			
+DONE
 ======================================================

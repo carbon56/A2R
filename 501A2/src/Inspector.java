@@ -12,11 +12,56 @@ public class Inspector {
 	// down etc.
 	public void inspect(Object obj, boolean recursive) {
 		Class c = obj.getClass();
-		inspectClass(c, obj, recursive, 0);
+//		inspectClass(c, obj, recursive, 0);
+
+		if (obj != null) {
+			inspectClass(c, obj, recursive, 0);
+			inspectConstructor(c, 0);
+			inspectMethod(c, 0);
+			inspectField(c, obj, 0);
+			if (recursive) {
+				recurse(c, obj, recursive, 0);
+			}
+
+		}
+
 	}
-	
-	
-	private void inspectMethod(Class c) {
+
+	public void printTabs(int depth, String toPrint) {
+
+		String tab = "";
+		while (depth > 0) {
+			tab += "\t";
+			depth--;
+		}
+
+		System.out.println(tab + toPrint);
+
+	}
+
+	public void recurse(Class c, Object obj, boolean recursive, int depth) {
+		Class superClass = c.getSuperclass();
+		if (superClass != null) {
+			depth++;
+			System.out.println("======================================================");
+			printTabs(depth, "Inspecting Superclass: " + superClass.getName());
+
+
+			inspectClass(superClass, obj, recursive, depth);
+			inspectConstructor(superClass, depth);
+			inspectMethod(superClass, depth);
+			inspectField(superClass, obj, depth);
+
+			recurse(superClass, obj, recursive, depth);
+			// System.out.println("======================================================");
+
+		} else {
+			System.out.println("DONE");
+		}
+
+	}
+
+	private void inspectMethod(Class c, int depth) {
 		// (5) Methods
 		// a) The name
 		// b) The exceptions thrown
@@ -28,12 +73,12 @@ public class Inspector {
 
 		for (Method method : classMethods) {
 			// (a) get name of the method
-			System.out.println("Method Name: " + method.getName());
+			printTabs(depth, "Method Name: " + method.getName());
 			// (b) get the exceptions thrown
 
 			Class[] classExceptions = method.getExceptionTypes();
 			for (Class except : classExceptions) {
-				System.out.println("Exception Types: " + except.getName());
+				printTabs(depth, "Exception Types: " + except.getName());
 			}
 
 			// System.out.println();
@@ -52,24 +97,26 @@ public class Inspector {
 
 			}
 
-			System.out.println(parameters);
+			printTabs(depth, parameters);
 			// (d) get the return type of the method
-			System.out.println("Method Return Type: " + method.getReturnType());
+			printTabs(depth, "Method Return Type: " + method.getReturnType());
 			// double check if toString is allowed / read documentation (getName no work)
-			System.out.println("Method Modifier: " + Modifier.toString(method.getModifiers()));
-			System.out.println();
+			printTabs(depth, "Method Modifier: " + Modifier.toString(method.getModifiers()));
+			printTabs(depth, "");
 
 		}
 	}
-	private void inspectConstructor(Class c) {
-	// (4) Inspect Constructors
-	//    	a) The name constructors the class declares. For each, also find the following:
-	//    	b) The parameter types
-	//    	c) The modifiers
+
+	private void inspectConstructor(Class c, int depth) {
+		// (4) Inspect Constructors
+		// a) The name constructors the class declares. For each, also find the
+		// following:
+		// b) The parameter types
+		// c) The modifiers
 
 		Constructor[] Classconstructors = c.getConstructors();
 		for (Constructor constructor : Classconstructors) {
-			System.out.println("Constructor Name: " + constructor.getName());
+			printTabs(depth, "Constructor Name: " + constructor.getName());
 			Class[] parameterTypes = constructor.getParameterTypes();
 			String consParam = "Parameter(s): ";
 			int i = 0;
@@ -83,47 +130,41 @@ public class Inspector {
 
 			}
 
-			System.out.println(consParam);
+			printTabs(depth, consParam);
 			// double check if toString is allowed / read documentation
-			System.out.println("Constructor Modifier: " + Modifier.toString(constructor.getModifiers()) + "\n");
+			printTabs(depth, "Constructor Modifier: " + Modifier.toString(constructor.getModifiers()) + "\n");
 
 		}
 	}
 
 	private void inspectClass(Class c, Object obj, boolean recursive, int depth) {
-		System.out.println();
+		printTabs(depth, "");
 		// (1) Get name of the class
-		System.out.println("Name of Class: " + c.getName());
+		printTabs(depth, "Name of Class: " + c.getName());
+
+		printTabs(depth, "Name of Class" + c.getName());
 
 		// (2) Get name of the immediate superclass
-		System.out.println("Name of Immediate superclass: " + c.getSuperclass().getName() + "\n");
+		// NEED TO FIX
+		// System.out.println("Name of Immediate superclass: " +
+		// c.getSuperclass().getName() + "\n");
 		// System.out.println(c.getMethods());
 
 		// Constructors that the class declares
 		// (3) Examine the interfaces
 		Class[] interfaces = c.getInterfaces();
-
 		for (Class inter : interfaces) {
-			System.out.println("Interface Name: " + inter.getName());
+			printTabs(depth, "Interface Name: " + inter.getName());
 		}
-		System.out.println();
-		
-		inspectConstructor(c);
-		inspectMethod(c);
-		inspectField(c, obj);
-		
-		
-		
-		
+		printTabs(depth, "");
 
-
-
-
-
+//		inspectConstructor(c);
+//		inspectMethod(c);
+//		inspectField(c, obj);
 
 	}
-	
-	private void inspectField(Class c, Object obj) {
+
+	private void inspectField(Class c, Object obj, int depth) {
 		// (6) Inspect Fields
 //		a) The name
 //		b) The type
@@ -134,16 +175,16 @@ public class Inspector {
 		Field[] Classfields = c.getDeclaredFields();
 		for (int k = 0; k < Classfields.length; k++) {
 			Classfields[k].setAccessible(true);
-			System.out.println("Field Name: " + Classfields[k].getName());
-			System.out.println("Field Type: " + Classfields[k].getType().getName());
+			printTabs(depth, "Field Name: " + Classfields[k].getName());
+			printTabs(depth, "Field Type: " + Classfields[k].getType().getName());
 			// double check if toString is allowed / read documentation
-			System.out.println("Field Modifier: " + Modifier.toString(Classfields[k].getModifiers()));
+			printTabs(depth, "Field Modifier: " + Modifier.toString(Classfields[k].getModifiers()));
 
 			try {
 				// Need to get arrays and also other objects :<
 				Object value = Classfields[k].get(obj);
 				if (checkPrimitiveValue(value)) {
-					System.out.println("Field Value: " + value + "\n");
+					printTabs(depth, "Field Value: " + value + "\n");
 
 				} else {
 					if (Classfields[k].getType().isArray()) {
@@ -159,7 +200,7 @@ public class Inspector {
 
 						}
 						wow += " ]";
-						System.out.println(wow);
+						printTabs(depth, wow);
 
 						// System.out.println("NO");
 					}
