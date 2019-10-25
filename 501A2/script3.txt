@@ -27,18 +27,18 @@ Parameter(s): int
 Method Return Type: void
 Method Modifier: public
 
-Method Name: func1
-Exception Types: java.lang.Exception
-Parameter(s): int, double, boolean, java.lang.String
-Method Return Type: void
-Method Modifier: public
-
 Method Name: func2
 Exception Types: java.lang.Exception
 Exception Types: java.lang.ArithmeticException
 Exception Types: java.lang.IllegalMonitorStateException
 Parameter(s): java.lang.String
 Method Return Type: int
+Method Modifier: public
+
+Method Name: func1
+Exception Types: java.lang.Exception
+Parameter(s): int, double, boolean, java.lang.String
+Method Return Type: void
 Method Modifier: public
 
 Method Name: func0

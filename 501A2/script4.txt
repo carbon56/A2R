@@ -87,10 +87,4 @@ Field Modifier: private
 Not primitive type 
 
 [ ]
-Field Name: delete
-Field Type: [Ljava.lang.Integer;
-Field Modifier: private
-Not primitive type 
-
-[ 1, 2, 4, ]
 ======================================================
