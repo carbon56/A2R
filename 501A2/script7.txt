@@ -4,115 +4,116 @@ Running Test: [[LClassB;@28d93b30
 Recursive: true
 
 Name of Class: [[LClassB;
-Name of Class[[LClassB;
-Interface Name: java.lang.Cloneable
-Interface Name: java.io.Serializable
+Name of Immediate superclass: java.lang.Object
+
+Inspecting Interface: java.lang.Cloneable
+Name of Class: java.lang.Cloneable
+
+Inspecting Interface: java.io.Serializable
+Name of Class: java.io.Serializable
 
 Method Name: wait
-Exception Types: java.lang.InterruptedException
-Parameter(s): long, int
-Method Return Type: void
-Method Modifier: public final
+  Exception Types: java.lang.InterruptedException
+  Parameter(s): long, int
+  Method Return Type: void
+  Method Modifier: public final
 
 Method Name: wait
-Exception Types: java.lang.InterruptedException
-Parameter(s): long
-Method Return Type: void
-Method Modifier: public final native
+  Exception Types: java.lang.InterruptedException
+  Parameter(s): long
+  Method Return Type: void
+  Method Modifier: public final native
 
 Method Name: wait
-Exception Types: java.lang.InterruptedException
-Parameter(s): 
-Method Return Type: void
-Method Modifier: public final
+  Exception Types: java.lang.InterruptedException
+  Parameter(s): 
+  Method Return Type: void
+  Method Modifier: public final
 
 Method Name: equals
-Parameter(s): java.lang.Object
-Method Return Type: boolean
-Method Modifier: public
+  Parameter(s): java.lang.Object
+  Method Return Type: boolean
+  Method Modifier: public
 
 Method Name: toString
-Parameter(s): 
-Method Return Type: class java.lang.String
-Method Modifier: public
+  Parameter(s): 
+  Method Return Type: class java.lang.String
+  Method Modifier: public
 
 Method Name: hashCode
-Parameter(s): 
-Method Return Type: int
-Method Modifier: public native
+  Parameter(s): 
+  Method Return Type: int
+  Method Modifier: public native
 
 Method Name: getClass
-Parameter(s): 
-Method Return Type: class java.lang.Class
-Method Modifier: public final native
+  Parameter(s): 
+  Method Return Type: class java.lang.Class
+  Method Modifier: public final native
 
 Method Name: notify
-Parameter(s): 
-Method Return Type: void
-Method Modifier: public final native
+  Parameter(s): 
+  Method Return Type: void
+  Method Modifier: public final native
 
 Method Name: notifyAll
-Parameter(s): 
-Method Return Type: void
-Method Modifier: public final native
+  Parameter(s): 
+  Method Return Type: void
+  Method Modifier: public final native
 
 ======================================================
-	Inspecting Superclass: java.lang.Object
+	Inspecting [[LClassB;'s superclass: java.lang.Object
 	
 	Name of Class: java.lang.Object
-	Name of Classjava.lang.Object
-	
 	Constructor Name: java.lang.Object
-	Parameter(s): 
-	Constructor Modifier: public
+	  Parameter(s): 
+	  Constructor Modifier: public
 
 	Method Name: wait
-	Exception Types: java.lang.InterruptedException
-	Parameter(s): long, int
-	Method Return Type: void
-	Method Modifier: public final
+	  Exception Types: java.lang.InterruptedException
+	  Parameter(s): long, int
+	  Method Return Type: void
+	  Method Modifier: public final
 	
 	Method Name: wait
-	Exception Types: java.lang.InterruptedException
-	Parameter(s): long
-	Method Return Type: void
-	Method Modifier: public final native
+	  Exception Types: java.lang.InterruptedException
+	  Parameter(s): long
+	  Method Return Type: void
+	  Method Modifier: public final native
 	
 	Method Name: wait
-	Exception Types: java.lang.InterruptedException
-	Parameter(s): 
-	Method Return Type: void
-	Method Modifier: public final
+	  Exception Types: java.lang.InterruptedException
+	  Parameter(s): 
+	  Method Return Type: void
+	  Method Modifier: public final
 	
 	Method Name: equals
-	Parameter(s): java.lang.Object
-	Method Return Type: boolean
-	Method Modifier: public
+	  Parameter(s): java.lang.Object
+	  Method Return Type: boolean
+	  Method Modifier: public
 	
 	Method Name: toString
-	Parameter(s): 
-	Method Return Type: class java.lang.String
-	Method Modifier: public
+	  Parameter(s): 
+	  Method Return Type: class java.lang.String
+	  Method Modifier: public
 	
 	Method Name: hashCode
-	Parameter(s): 
-	Method Return Type: int
-	Method Modifier: public native
+	  Parameter(s): 
+	  Method Return Type: int
+	  Method Modifier: public native
 	
 	Method Name: getClass
-	Parameter(s): 
-	Method Return Type: class java.lang.Class
-	Method Modifier: public final native
+	  Parameter(s): 
+	  Method Return Type: class java.lang.Class
+	  Method Modifier: public final native
 	
 	Method Name: notify
-	Parameter(s): 
-	Method Return Type: void
-	Method Modifier: public final native
+	  Parameter(s): 
+	  Method Return Type: void
+	  Method Modifier: public final native
 	
 	Method Name: notifyAll
-	Parameter(s): 
-	Method Return Type: void
-	Method Modifier: public final native
+	  Parameter(s): 
+	  Method Return Type: void
+	  Method Modifier: public final native
 	
-DONE
 ======================================================

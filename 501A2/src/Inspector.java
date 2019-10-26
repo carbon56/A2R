@@ -18,9 +18,9 @@ public class Inspector {
 			inspectClass(c, obj, recursive, 0);
 			inspectConstructor(c, 0);
 			inspectMethod(c, 0);
-			inspectField(c, obj, 0);
+			inspectField(c, obj, 0, recursive);
 			if (recursive) {
-				recurse(c, obj, recursive, 0);
+				recurse(c, obj, recursive, 0, false);
 			}
 
 		}
@@ -39,24 +39,36 @@ public class Inspector {
 
 	}
 
-	public void recurse(Class c, Object obj, boolean recursive, int depth) {
+	public void recurse(Class c, Object obj, boolean recursive, int depth, boolean checkInterface) {
+		if(checkInterface) {
+			// want to check interface
+			printTabs(depth, "Inspecting Interface: " + c.getName());
+			inspectClass(c, obj, recursive, depth);
+			inspectConstructor(c, depth);
+			inspectMethod(c, depth);
+			inspectField(c, obj, depth, recursive);
+			
+			
+			
+		}else {
+			
+		
 		Class superClass = c.getSuperclass();
 		if (superClass != null) {
 			depth++;
 			System.out.println("======================================================");
-			printTabs(depth, "Inspecting Superclass: " + superClass.getName());
-
-
+			printTabs(depth, "Inspecting " + c.getName() + "'s superclass: " + superClass.getName());
+			
 			inspectClass(superClass, obj, recursive, depth);
 			inspectConstructor(superClass, depth);
 			inspectMethod(superClass, depth);
-			inspectField(superClass, obj, depth);
+			inspectField(superClass, obj, depth, recursive);
 
-			recurse(superClass, obj, recursive, depth);
+			recurse(superClass, obj, recursive, depth, false);
 			// System.out.println("======================================================");
 
-		} else {
-			System.out.println("DONE");
+		} 
+		
 		}
 
 	}
@@ -78,14 +90,14 @@ public class Inspector {
 
 			Class[] classExceptions = method.getExceptionTypes();
 			for (Class except : classExceptions) {
-				printTabs(depth, "Exception Types: " + except.getName());
+				printTabs(depth, "  Exception Types: " + except.getName());
 			}
 
 			// System.out.println();
 
 			// (c) get the parameter types of method
 			Class[] parameterTypes = method.getParameterTypes();
-			String parameters = "Parameter(s): ";
+			String parameters = "  Parameter(s): ";
 			int i = 0;
 			for (Class parameter : parameterTypes) {
 				if (i == 0) {
@@ -99,9 +111,9 @@ public class Inspector {
 
 			printTabs(depth, parameters);
 			// (d) get the return type of the method
-			printTabs(depth, "Method Return Type: " + method.getReturnType());
+			printTabs(depth, "  Method Return Type: " + method.getReturnType());
 			// double check if toString is allowed / read documentation (getName no work)
-			printTabs(depth, "Method Modifier: " + Modifier.toString(method.getModifiers()));
+			printTabs(depth, "  Method Modifier: " + Modifier.toString(method.getModifiers()));
 			printTabs(depth, "");
 
 		}
@@ -118,7 +130,7 @@ public class Inspector {
 		for (Constructor constructor : Classconstructors) {
 			printTabs(depth, "Constructor Name: " + constructor.getName());
 			Class[] parameterTypes = constructor.getParameterTypes();
-			String consParam = "Parameter(s): ";
+			String consParam = "  Parameter(s): ";
 			int i = 0;
 			for (Class parameter : parameterTypes) {
 				if (i == 0) {
@@ -132,39 +144,45 @@ public class Inspector {
 
 			printTabs(depth, consParam);
 			// double check if toString is allowed / read documentation
-			printTabs(depth, "Constructor Modifier: " + Modifier.toString(constructor.getModifiers()) + "\n");
+			printTabs(depth, "  Constructor Modifier: " + Modifier.toString(constructor.getModifiers()) + "\n");
 
 		}
 	}
 
 	private void inspectClass(Class c, Object obj, boolean recursive, int depth) {
-		printTabs(depth, "");
+		if(c.isInterface() == false) {
+			printTabs(depth, "");
+			
+		}
+			
+		
+		//printTabs(depth, "");
 		// (1) Get name of the class
 		printTabs(depth, "Name of Class: " + c.getName());
 
-		printTabs(depth, "Name of Class" + c.getName());
-
 		// (2) Get name of the immediate superclass
-		// NEED TO FIX
-		// System.out.println("Name of Immediate superclass: " +
-		// c.getSuperclass().getName() + "\n");
-		// System.out.println(c.getMethods());
+		if(c.getSuperclass() != null) {
+			 System.out.println("Name of Immediate superclass: " +
+			 c.getSuperclass().getName() + "\n");
+			
+		}
+
 
 		// Constructors that the class declares
 		// (3) Examine the interfaces
 		Class[] interfaces = c.getInterfaces();
 		for (Class inter : interfaces) {
-			printTabs(depth, "Interface Name: " + inter.getName());
+				recurse(inter, obj, recursive, depth, true);
+				printTabs(depth, "");
+				
 		}
-		printTabs(depth, "");
 
-//		inspectConstructor(c);
-//		inspectMethod(c);
-//		inspectField(c, obj);
+
+
 
 	}
 
-	private void inspectField(Class c, Object obj, int depth) {
+	private void inspectField(Class c, Object obj, int depth, boolean recurseFlag) {
 		// (6) Inspect Fields
 //		a) The name
 //		b) The type
@@ -176,34 +194,85 @@ public class Inspector {
 		for (int k = 0; k < Classfields.length; k++) {
 			Classfields[k].setAccessible(true);
 			printTabs(depth, "Field Name: " + Classfields[k].getName());
-			printTabs(depth, "Field Type: " + Classfields[k].getType().getName());
+			printTabs(depth, "  Field Type: " + Classfields[k].getType());
 			// double check if toString is allowed / read documentation
-			printTabs(depth, "Field Modifier: " + Modifier.toString(Classfields[k].getModifiers()));
+			printTabs(depth, "  Field Modifier: " + Modifier.toString(Classfields[k].getModifiers()));
 
 			try {
 				// Need to get arrays and also other objects :<
 				Object value = Classfields[k].get(obj);
 				if (checkPrimitiveValue(value)) {
-					printTabs(depth, "Field Value: " + value + "\n");
+					printTabs(depth, "  Field Value: " + value + "\n");
 
 				} else {
+					if(recurseFlag == false) {
+						printTabs(depth, "  Field Value: " + Classfields[k].getName() +"@"+ Classfields[k].hashCode() +  "\n");
+						
+					}
+					
+					// Handle arrays and recursive = True 
 					if (Classfields[k].getType().isArray()) {
-						String wow = "[";
+						String wow = "  Field Value: [";
 
 						for (int w = 0; w < Array.getLength(value); w++) {
 							Object thing = Array.get(value, w);
 							if (checkPrimitiveValue(thing)) {
 								// System.out.println("Field Value: " + value + "\n");
 								wow += " " + thing + ",";
-
+								
 							}
-
+							else if (thing == null) {
+								if(w < Array.getLength(value) - 1) {
+								wow += "null, ";}
+								else {
+									wow += "null";
+									
+								}
+							}
+							else { // Not primitive
+								if(recurseFlag) {
+									recurse(thing.getClass(),thing,recurseFlag, depth+1, false);
+									
+								}
+								
+							}
 						}
-						wow += " ]";
+						wow += "]" + "Length of Array = " + Array.getLength(value);
 						printTabs(depth, wow);
+						
+						
 
-						// System.out.println("NO");
 					}
+					
+					
+					
+					
+					
+					
+					if(Classfields[k].get(obj) != null) {
+						recurse(Classfields[k].get(obj).getClass(), value, recurseFlag, depth+1, false);
+						
+					}else{
+						//recurse(Classfields[k].get(obj).getClass(), value, recurseFlag, depth+1, false);
+						
+						printTabs(depth, "  Field Value: null \n");
+					}
+					//recurse(Classfields[k].get(obj).getClass(), value, recurseFlag, depth, false);
+					
+//					// Try to handle arrays 
+//					if (Classfields[k].getType().isArray() && recurseFlag) {
+//						String wow = "[";
+//
+//						for (int w = 0; w < Array.getLength(value); w++) {
+//							Object thing = Array.get(value, w);
+//							if (checkPrimitiveValue(thing)) {
+//								// System.out.println("Field Value: " + value + "\n");
+//								wow += " " + thing + ",";
+//							}
+//						}
+//						wow += " ]";
+//						printTabs(depth, wow);
+//					}
 				}
 
 			} catch (IllegalArgumentException | IllegalAccessException e) {
@@ -211,9 +280,6 @@ public class Inspector {
 				e.printStackTrace();
 			}
 
-//				
-//			}
-			// The recursive stuff
 
 		}
 	}
@@ -231,7 +297,7 @@ public class Inspector {
 			}
 
 			else {
-				System.out.println("Not primitive type \n");
+				//System.out.println("Not primitive type \n");
 				return false;
 			}
 

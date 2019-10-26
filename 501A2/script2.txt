@@ -4,154 +4,160 @@ Running Test: ClassA
 Recursive: true
 
 Name of Class: ClassA
-Name of ClassClassA
-Interface Name: java.io.Serializable
-Interface Name: java.lang.Runnable
+Name of Immediate superclass: java.lang.Object
+
+Inspecting Interface: java.io.Serializable
+Name of Class: java.io.Serializable
+
+Inspecting Interface: java.lang.Runnable
+Name of Class: java.lang.Runnable
+Method Name: run
+  Parameter(s): 
+  Method Return Type: void
+  Method Modifier: public abstract
+
 
 Constructor Name: ClassA
-Parameter(s): 
-Constructor Modifier: public
+  Parameter(s): 
+  Constructor Modifier: public
 
 Constructor Name: ClassA
-Parameter(s): int
-Constructor Modifier: public
+  Parameter(s): int
+  Constructor Modifier: public
 
 Method Name: run
-Parameter(s): 
-Method Return Type: void
-Method Modifier: public
+  Parameter(s): 
+  Method Return Type: void
+  Method Modifier: public
 
 Method Name: toString
-Parameter(s): 
-Method Return Type: class java.lang.String
-Method Modifier: public
+  Parameter(s): 
+  Method Return Type: class java.lang.String
+  Method Modifier: public
 
 Method Name: setVal
-Exception Types: java.lang.Exception
-Parameter(s): int
-Method Return Type: void
-Method Modifier: public
+  Exception Types: java.lang.Exception
+  Parameter(s): int
+  Method Return Type: void
+  Method Modifier: public
 
 Method Name: getVal
-Parameter(s): 
-Method Return Type: int
-Method Modifier: public
+  Parameter(s): 
+  Method Return Type: int
+  Method Modifier: public
 
 Method Name: wait
-Exception Types: java.lang.InterruptedException
-Parameter(s): long, int
-Method Return Type: void
-Method Modifier: public final
+  Exception Types: java.lang.InterruptedException
+  Parameter(s): long, int
+  Method Return Type: void
+  Method Modifier: public final
 
 Method Name: wait
-Exception Types: java.lang.InterruptedException
-Parameter(s): long
-Method Return Type: void
-Method Modifier: public final native
+  Exception Types: java.lang.InterruptedException
+  Parameter(s): long
+  Method Return Type: void
+  Method Modifier: public final native
 
 Method Name: wait
-Exception Types: java.lang.InterruptedException
-Parameter(s): 
-Method Return Type: void
-Method Modifier: public final
+  Exception Types: java.lang.InterruptedException
+  Parameter(s): 
+  Method Return Type: void
+  Method Modifier: public final
 
 Method Name: equals
-Parameter(s): java.lang.Object
-Method Return Type: boolean
-Method Modifier: public
+  Parameter(s): java.lang.Object
+  Method Return Type: boolean
+  Method Modifier: public
 
 Method Name: hashCode
-Parameter(s): 
-Method Return Type: int
-Method Modifier: public native
+  Parameter(s): 
+  Method Return Type: int
+  Method Modifier: public native
 
 Method Name: getClass
-Parameter(s): 
-Method Return Type: class java.lang.Class
-Method Modifier: public final native
+  Parameter(s): 
+  Method Return Type: class java.lang.Class
+  Method Modifier: public final native
 
 Method Name: notify
-Parameter(s): 
-Method Return Type: void
-Method Modifier: public final native
+  Parameter(s): 
+  Method Return Type: void
+  Method Modifier: public final native
 
 Method Name: notifyAll
-Parameter(s): 
-Method Return Type: void
-Method Modifier: public final native
+  Parameter(s): 
+  Method Return Type: void
+  Method Modifier: public final native
 
 Field Name: val
-Field Type: int
-Field Modifier: private
-Field Value: 12
+  Field Type: int
+  Field Modifier: private
+  Field Value: 12
 
 Field Name: val2
-Field Type: double
-Field Modifier: private
-Field Value: 0.2
+  Field Type: double
+  Field Modifier: private
+  Field Value: 0.2
 
 Field Name: val3
-Field Type: boolean
-Field Modifier: private
-Field Value: true
+  Field Type: boolean
+  Field Modifier: private
+  Field Value: true
 
 ======================================================
-	Inspecting Superclass: java.lang.Object
+	Inspecting ClassA's superclass: java.lang.Object
 	
 	Name of Class: java.lang.Object
-	Name of Classjava.lang.Object
-	
 	Constructor Name: java.lang.Object
-	Parameter(s): 
-	Constructor Modifier: public
+	  Parameter(s): 
+	  Constructor Modifier: public
 
 	Method Name: wait
-	Exception Types: java.lang.InterruptedException
-	Parameter(s): long, int
-	Method Return Type: void
-	Method Modifier: public final
+	  Exception Types: java.lang.InterruptedException
+	  Parameter(s): long, int
+	  Method Return Type: void
+	  Method Modifier: public final
 	
 	Method Name: wait
-	Exception Types: java.lang.InterruptedException
-	Parameter(s): long
-	Method Return Type: void
-	Method Modifier: public final native
+	  Exception Types: java.lang.InterruptedException
+	  Parameter(s): long
+	  Method Return Type: void
+	  Method Modifier: public final native
 	
 	Method Name: wait
-	Exception Types: java.lang.InterruptedException
-	Parameter(s): 
-	Method Return Type: void
-	Method Modifier: public final
+	  Exception Types: java.lang.InterruptedException
+	  Parameter(s): 
+	  Method Return Type: void
+	  Method Modifier: public final
 	
 	Method Name: equals
-	Parameter(s): java.lang.Object
-	Method Return Type: boolean
-	Method Modifier: public
+	  Parameter(s): java.lang.Object
+	  Method Return Type: boolean
+	  Method Modifier: public
 	
 	Method Name: toString
-	Parameter(s): 
-	Method Return Type: class java.lang.String
-	Method Modifier: public
+	  Parameter(s): 
+	  Method Return Type: class java.lang.String
+	  Method Modifier: public
 	
 	Method Name: hashCode
-	Parameter(s): 
-	Method Return Type: int
-	Method Modifier: public native
+	  Parameter(s): 
+	  Method Return Type: int
+	  Method Modifier: public native
 	
 	Method Name: getClass
-	Parameter(s): 
-	Method Return Type: class java.lang.Class
-	Method Modifier: public final native
+	  Parameter(s): 
+	  Method Return Type: class java.lang.Class
+	  Method Modifier: public final native
 	
 	Method Name: notify
-	Parameter(s): 
-	Method Return Type: void
-	Method Modifier: public final native
+	  Parameter(s): 
+	  Method Return Type: void
+	  Method Modifier: public final native
 	
 	Method Name: notifyAll
-	Parameter(s): 
-	Method Return Type: void
-	Method Modifier: public final native
+	  Parameter(s): 
+	  Method Return Type: void
+	  Method Modifier: public final native
 	
-DONE
 ======================================================
