@@ -497,7 +497,7 @@ Method Name: codePoints
 Field Name: value
   Field Type: class [C
   Field Modifier: private final
-  Field Value: [ T, e, s, t,  , S, t, r, i, n, g,]Length of Array = 11
+  Field Value: [ T, e, s, t,  , S, t, r, i, n, g,] Length of Array = 11
 ======================================================
 		Inspecting [C's superclass: java.lang.Object
 		
@@ -567,7 +567,7 @@ Field Name: serialVersionUID
 Field Name: serialPersistentFields
   Field Type: class [Ljava.io.ObjectStreamField;
   Field Modifier: private static final
-  Field Value: []Length of Array = 0
+  Field Value: [] Length of Array = 0
 ======================================================
 		Inspecting [Ljava.io.ObjectStreamField;'s superclass: java.lang.Object
 		

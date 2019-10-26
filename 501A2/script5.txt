@@ -139,7 +139,7 @@ Field Name: val3
 Field Name: vallarray
   Field Type: class [LClassA;
   Field Modifier: private
-  Field Value: [null, null, null, null, null, null, null, null, null, null]Length of Array = 10
+  Field Value: [null, null, null, null, null, null, null, null, null, null] Length of Array = 10
 ======================================================
 		Inspecting [LClassA;'s superclass: java.lang.Object
 		

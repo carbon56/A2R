@@ -8,8 +8,7 @@ import java.lang.reflect.Modifier;
 // CPSC 501 Assignment 2
 
 public class Inspector {
-	// just use a while loop thats like while != object class, print stuff then move
-	// down etc.
+
 	public void inspect(Object obj, boolean recursive) {
 		Class c = obj.getClass();
 //		inspectClass(c, obj, recursive, 0);
@@ -73,7 +72,7 @@ public class Inspector {
 
 	}
 
-	private void inspectMethod(Class c, int depth) {
+	void inspectMethod(Class c, int depth) {
 		// (5) Methods
 		// a) The name
 		// b) The exceptions thrown
@@ -112,7 +111,6 @@ public class Inspector {
 			printTabs(depth, parameters);
 			// (d) get the return type of the method
 			printTabs(depth, "  Method Return Type: " + method.getReturnType());
-			// double check if toString is allowed / read documentation (getName no work)
 			printTabs(depth, "  Method Modifier: " + Modifier.toString(method.getModifiers()));
 			printTabs(depth, "");
 
@@ -195,7 +193,7 @@ public class Inspector {
 			Classfields[k].setAccessible(true);
 			printTabs(depth, "Field Name: " + Classfields[k].getName());
 			printTabs(depth, "  Field Type: " + Classfields[k].getType());
-			// double check if toString is allowed / read documentation
+			
 			printTabs(depth, "  Field Modifier: " + Modifier.toString(Classfields[k].getModifiers()));
 
 			try {
@@ -237,7 +235,7 @@ public class Inspector {
 								
 							}
 						}
-						arrayField += "]" + "Length of Array = " + Array.getLength(value);
+						arrayField += "]" + " Length of Array = " + Array.getLength(value);
 						printTabs(depth, arrayField);
 						
 						

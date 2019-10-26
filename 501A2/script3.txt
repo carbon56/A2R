@@ -280,11 +280,6 @@ Name of Immediate superclass: ClassD
 	  Method Return Type: class java.lang.String
 	  Method Modifier: public
 	
-	Method Name: func3
-	  Parameter(s): int
-	  Method Return Type: void
-	  Method Modifier: public abstract
-	
 	Method Name: func0
 	  Exception Types: java.lang.Exception
 	  Parameter(s): int, boolean
@@ -304,6 +299,11 @@ Name of Immediate superclass: ClassD
 	  Parameter(s): java.lang.String
 	  Method Return Type: int
 	  Method Modifier: public
+	
+	Method Name: func3
+	  Parameter(s): int
+	  Method Return Type: void
+	  Method Modifier: public abstract
 	
 	Method Name: getVal3
 	  Parameter(s): 
@@ -669,7 +669,7 @@ Name of Immediate superclass: java.lang.Object
 		Field Name: vallarray
 		  Field Type: class [LClassA;
 		  Field Modifier: private
-		  Field Value: [null, null, null, null, null, null, null, null, null, null]Length of Array = 10
+		  Field Value: [null, null, null, null, null, null, null, null, null, null] Length of Array = 10
 ======================================================
 				Inspecting [LClassA;'s superclass: java.lang.Object
 				
