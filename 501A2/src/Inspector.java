@@ -212,20 +212,20 @@ public class Inspector {
 					
 					// Handle arrays and recursive = True 
 					if (Classfields[k].getType().isArray()) {
-						String wow = "  Field Value: [";
+						String arrayField = "  Field Value: [";
 
 						for (int w = 0; w < Array.getLength(value); w++) {
 							Object thing = Array.get(value, w);
 							if (checkPrimitiveValue(thing)) {
 								// System.out.println("Field Value: " + value + "\n");
-								wow += " " + thing + ",";
+								arrayField += " " + thing + ",";
 								
 							}
 							else if (thing == null) {
 								if(w < Array.getLength(value) - 1) {
-								wow += "null, ";}
+								arrayField += "null, ";}
 								else {
-									wow += "null";
+									arrayField += "null";
 									
 								}
 							}
@@ -237,8 +237,8 @@ public class Inspector {
 								
 							}
 						}
-						wow += "]" + "Length of Array = " + Array.getLength(value);
-						printTabs(depth, wow);
+						arrayField += "]" + "Length of Array = " + Array.getLength(value);
+						printTabs(depth, arrayField);
 						
 						
 
@@ -257,22 +257,7 @@ public class Inspector {
 						
 						printTabs(depth, "  Field Value: null \n");
 					}
-					//recurse(Classfields[k].get(obj).getClass(), value, recurseFlag, depth, false);
-					
-//					// Try to handle arrays 
-//					if (Classfields[k].getType().isArray() && recurseFlag) {
-//						String wow = "[";
-//
-//						for (int w = 0; w < Array.getLength(value); w++) {
-//							Object thing = Array.get(value, w);
-//							if (checkPrimitiveValue(thing)) {
-//								// System.out.println("Field Value: " + value + "\n");
-//								wow += " " + thing + ",";
-//							}
-//						}
-//						wow += " ]";
-//						printTabs(depth, wow);
-//					}
+
 				}
 
 			} catch (IllegalArgumentException | IllegalAccessException e) {

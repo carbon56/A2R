@@ -280,6 +280,11 @@ Name of Immediate superclass: ClassD
 	  Method Return Type: class java.lang.String
 	  Method Modifier: public
 	
+	Method Name: func3
+	  Parameter(s): int
+	  Method Return Type: void
+	  Method Modifier: public abstract
+	
 	Method Name: func0
 	  Exception Types: java.lang.Exception
 	  Parameter(s): int, boolean
@@ -299,11 +304,6 @@ Name of Immediate superclass: ClassD
 	  Parameter(s): java.lang.String
 	  Method Return Type: int
 	  Method Modifier: public
-	
-	Method Name: func3
-	  Parameter(s): int
-	  Method Return Type: void
-	  Method Modifier: public abstract
 	
 	Method Name: getVal3
 	  Parameter(s): 
